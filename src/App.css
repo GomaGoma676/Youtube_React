@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap");
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,85 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.logo {
+  background-color: transparent;
+  color: lightgray;
+  margin-top: 7px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+}
+
+.logout {
+  background-color: transparent;
+  color: lightgray;
+  margin-top: 7px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.photo {
+  background-color: transparent;
+  color: gray;
+  margin-right: 10px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.btn-modal {
+  background-color: transparent;
+  color: gray;
+  margin: 7px;
+  font-size: 22px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.video-list {
+  background-color: #292f38;
+  height: 100vh;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  overflow-y: auto;
+}
+.container {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.wait {
+  background-color: transparent;
+  color: gray;
+  font-size: 75px;
+  border: none;
+  outline: none;
+}
+.wrapper {
+  position: relative;
+  padding-top: 56.25%;
+}
+.player {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.like {
+  background-color: transparent;
+  color: gray;
+  margin-top: 20px;
+  font-size: 22px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
