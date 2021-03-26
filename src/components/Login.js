@@ -84,7 +84,11 @@ const loginReducer = (state, action) => {
     case INPUT_EDIT: {
       return {
         ...state,
-        [action.inputName]: action.payload,
+        //[action.inputName]: action.payload,
+        credentialsLog: {
+          ...state.credentialsLog,
+          [action.inputName]: action.payload,
+        },
         error: "",
       };
     }
@@ -104,12 +108,14 @@ const Login = (props) => {
   const [state, dispatch] = useReducer(loginReducer, initialState);
 
   const inputChangedLog = () => (event) => {
-    const cred = state.credentialsLog;
-    cred[event.target.name] = event.target.value;
+    //const cred = state.credentialsLog;
+    //cred[event.target.name] = event.target.value;
     dispatch({
       type: INPUT_EDIT,
-      inputName: "state.credentialLog",
-      payload: cred,
+      // inputName: "state.credentialLog",
+      //payload: cred,
+      inputName: event.target.name,
+      payload: event.target.value,
     });
   };
 
@@ -201,20 +207,6 @@ const Login = (props) => {
           />
 
           <span className={classes.spanError}>{state.error}</span>
-
-          {/* { state.isLoginView ?
-                      !state.credentialsLog.password || !state.credentialsLog.email ?
-                      <Button className={classes.submit} type="submit" fullWidth disabled
-                        variant="contained" color="primary">Login</Button>
-                      : <Button className={classes.submit} type="submit" fullWidth
-                        variant="contained" color="primary">Login</Button>
-                    :
-                      !state.credentialsLog.password || !state.credentialsLog.email ?
-                      <Button className={classes.submit} type="submit" fullWidth disabled
-                        variant="contained" color="primary">Register</Button>
-                      : <Button className={classes.submit} type="submit" fullWidth
-                        variant="contained" color="primary">Register</Button>
-                }  */}
 
           <Button
             className={classes.submit}

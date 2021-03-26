@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import { ApiContext } from "../context/ApiContext";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
+//import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Fab from "@material-ui/core/Fab";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 const VideoDetail = () => {
   const classes = useStyles();
+  const player = useRef(null);
   const {
     selectedVideo,
     deleteVideo,
@@ -49,6 +50,7 @@ const VideoDetail = () => {
         <ReactPlayer
           className="player"
           url={selectedVideo.video}
+          ref={player}
           width="100%"
           height="100%"
           playing
